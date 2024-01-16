@@ -31,7 +31,7 @@ body {
 .wrap {
     width: 100%;
     margin: auto;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 /* Navbar */
@@ -45,9 +45,6 @@ body {
     position: fixed;
     width: 100%;
     margin: auto 0;
-    top: 0;
-    /* left: 0; */
-    /* right: 0; */
     z-index: 9999;
 }
 
@@ -124,36 +121,42 @@ body {
 
 /* About */
 .about {
+    display: flex;
     justify-content: center;
-    padding-top: 10rem;
     width: 100%;
     height: 100vh;
-}
-
-.about h1 {
-    font-size: 2rem;
-    text-align: center;
-}
-
-.about h2 {
-    font-size: 5rem;
-    text-align: center;
+    align-items: center;
+    margin-top: 3rem;
 }
 
 .about .row {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 5rem;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
 .about .row .container {
     display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
     position: relative;
-    bottom: 30px;
     align-items: center;
     justify-content: center;
+    margin: 5rem 0;
+    padding: 2rem 0;
+}
+
+.about .row .container h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.about .row .container h2 {
+    font-size: 4rem;
+    text-align: center;
 }
 
 .about .row .container img {
@@ -163,7 +166,7 @@ body {
     height: 100%;
 }
 
-.about .row .container h2 {
+.about .row .container h3 {
     position: absolute;
     font-size: 5rem;
     font-weight: 700;
@@ -178,9 +181,10 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--primary);
-    height: 200vh;
-    padding: 10rem 0;
     width: 100%;
+    padding: 10rem 0;
+    height: 250vh;
+    overflow: hidden;
 }
 
 .story .row {
@@ -189,7 +193,6 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     margin: auto 2rem;
-    width: 100%;
 }
 
 .story .row .col {
@@ -339,10 +342,6 @@ footer .credit p {
     html {
         font-size: 75%;
     }
-    .about .row .container {
-        top: 90px;
-        bottom: 0;
-    }
 }
 
 /* Tablet */
@@ -388,11 +387,6 @@ footer .credit p {
     .navbar .navbar-nav a:hover::after,
     .navbar .navbar-nav a.active::after {
         transform: scaleX(1);
-    }
-
-    .about .row .container {
-        top: 245px;
-        bottom: 0;
     }
 
     .story .row.inverse {
