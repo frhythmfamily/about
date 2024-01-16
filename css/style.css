@@ -31,7 +31,7 @@ body {
 .wrap {
     width: 100%;
     margin: auto;
-    /* position: absolute; */
+    /* overflow: hidden; */
 }
 
 /* Navbar */
@@ -126,6 +126,7 @@ body {
 .about {
     justify-content: center;
     padding-top: 10rem;
+    width: 100%;
     height: 100vh;
 }
 
@@ -140,6 +141,7 @@ body {
 }
 
 .about .row {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin-top: 5rem;
@@ -178,20 +180,26 @@ body {
     background-color: var(--primary);
     height: 200vh;
     padding: 10rem 0;
+    width: 100%;
 }
 
 .story .row {
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
     margin: auto 2rem;
+    width: 100%;
 }
 
 .story .row .col {
+    width: 50%;
     display: flex;
-    justify-content: center;
+    flex-wrap: nowrap;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 
 .story .row .col.right {
@@ -216,15 +224,17 @@ body {
     line-height: 2rem;
 }
 
-.story .row img {
+.story .row .col img {
     margin: auto 2rem;
-    width: 50%;
+    width: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 /* Location */
 .location {
     display: flex;
+    width: 100%;
 }
 
 .location .row {
@@ -383,6 +393,18 @@ footer .credit p {
     .about .row .container {
         top: 245px;
         bottom: 0;
+    }
+
+    .story .row.inverse {
+        flex-wrap: wrap-reverse;
+    }
+    .story .row .col {
+        width: 100%;
+        text-align: center;
+    }
+    .story .row .col.right {
+        width: 100%;
+        text-align: center;
     }
 
     .location .row .container {
