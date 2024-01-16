@@ -148,6 +148,17 @@ body {
     margin: 5rem 0 0;
 }
 
+.about .row .hero {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem 0 0;
+    top: 36px;
+}
+
 .about .row .container h1 {
     font-size: 2rem;
     text-align: center;
@@ -158,16 +169,13 @@ body {
     text-align: center;
 }
 
-.about .row .container img {
+.about .row .hero img {
     width: 70%;
     min-width: 70%;
     max-width: 100%;
-    height: 100%;
-    position: relative;
-    top: 36px;
 }
 
-.about .row .container h3 {
+.about .row .hero h3 {
     position: absolute;
     text-align: center;
     font-size: 5rem;
@@ -344,7 +352,7 @@ footer .credit p {
     html {
         font-size: 75%;
     }
-    .about .row .container img {
+    .about .row .hero {
         top: 70px;
     }
 }
@@ -393,11 +401,11 @@ footer .credit p {
     .navbar .navbar-nav a.active::after {
         transform: scaleX(1);
     }
-    .about .row .container h3 {
+    .about .row .hero h3 {
         font-size: 3rem;
     }
 
-    .about .row .container img {
+    .about .row .hero {
         top: 150px;
     }
 
@@ -430,7 +438,7 @@ footer .credit p {
     html {
         font-size: 60%;
     }
-    .about .row .container img {
+    .about .row .hero {
         top: 201px;
     }
 }

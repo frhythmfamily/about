@@ -35,10 +35,9 @@ document.addEventListener('click', function (e) {
 
 // Parallax
 const image = document.getElementById('img1');
-const text = document.getElementById('text1');
 
 window.addEventListener('scroll', () => {
     let value = window.scrollY;
-    let widthPercentage = Math.min(value, 100);
+    let widthPercentage = Math.min(value * 0.3, 100);
     image.style.width = widthPercentage + '%';
 });
