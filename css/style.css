@@ -389,6 +389,9 @@ footer .credit p {
     .navbar .navbar-nav a.active::after {
         transform: scaleX(1);
     }
+    .about .row .container h3 {
+        font-size: 3rem;
+    }
 
     .story .row.inverse {
         flex-wrap: wrap-reverse;
