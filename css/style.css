@@ -168,6 +168,7 @@ body {
 
 .about .row .container h3 {
     position: absolute;
+    text-align: center;
     font-size: 5rem;
     font-weight: 700;
     opacity: 0;
