@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body style="height: 200vh">
+        <div class="container" id="container" style="position: relative; top: 200px; display: flex; justify-content: center">
+            <div class="box" style="position: relative; top: 0; height: 200px; width: 100%; background: #282828; display: flex; justify-content: center; align-items: center">
+                <p style="color: yellow">Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+
+        <!-- <script>
+            gsap.to('.box', {
+                scrollTrigger: '.box', // start the animation when ".box" enters the viewport (once)
+                x: 500
+            });
+        </script> -->
+        <script>
+            let tl = gsap.timeline({
+                // yes, we can add it to an entire timeline!
+                scrollTrigger: {
+                    trigger: '.container',
+                    pin: true, // pin the trigger element while active
+                    start: 'top top', // when the top of the trigger hits the top of the viewport
+                    end: '+=500', // end after scrolling 500px beyond the start
+                    scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+                    snap: {
+                        snapTo: 'labels', // snap to the closest label in the timeline
+                        duration: {min: 0.2, max: 3}, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+                        delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+                        ease: 'power1.inOut' // the ease of the snap animation ("power3" by default)
+                    }
+                }
+            });
+
+            // add animations and labels to the timeline
+            tl.addLabel('start').from('.box', {width: '70%', top: 100}).from('.box p', {opacity: 0}).addLabel('end');
+        </script>
+
+        <!-- <script>
+            var container = document.getElementById('container');
+            var lastScrollTop = 0;
+            var snapThreshold = 500;
+            var canScroll = true;
+
+            function adjustContainerWidth() {
+                var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (canScroll) {
+                    if (currentScrollTop > lastScrollTop && container.offsetWidth < 500) {
+                        // Scroll ke bawah, lebar bertambah
+                        container.style.width = container.offsetWidth + 2 + 'px';
+                    } else if (currentScrollTop < lastScrollTop && container.offsetWidth > 200) {
+                        // Scroll ke atas, lebar berkurang
+                        container.style.width = container.offsetWidth - 2 + 'px';
+                    }
+
+                    lastScrollTop = currentScrollTop;
+
+                    // Check apakah sudah melewati batas snapThreshold
+                    if (container.offsetWidth >= snapThreshold) {
+                        canScroll = false;
+                    }
+                } else {
+                    // Jika sudah melewati batas snapThreshold, tidak dapat scroll lagi
+                    if (currentScrollTop > lastScrollTop) {
+                        window.scrollTo(0, lastScrollTop);
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', adjustContainerWidth);
+        </script> -->
+    </body>
+</html>
