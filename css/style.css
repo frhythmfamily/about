@@ -452,4 +452,8 @@ footer .credit p {
     .about {
         height: 175vh;
     }
+
+    .navbar .navbar-nav {
+        width: 20rem;
+    }
 }
